@@ -1,0 +1,388 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="660d2398-c7f3-4f7e-b611-46e9790e6ea1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Purchase Order Header</ID>
+  <Name>Dim Purchase Order Header</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-897" scrolltop="-1495" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="5750" y="7990" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_PurchaseOrderHeader" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3916" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00004c0f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Purchase_Dim_PurchaseOrderHeader" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-897</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1495</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="af0d6a7b-7584-4056-a204-793629685e2f">
+    <DataSourceViewID>Purchase</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="9e2e82f9-4bf6-4998-8614-ac71a46e5088">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="09f57afb-21c8-4fbd-a5e6-33c3195068e7">
+      <ID>Purchase Order ID</ID>
+      <Name>Purchase Order ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="861f7768-dd78-4c66-bddd-5590c37721a0">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6f33ddd8-e4a9-4b03-849c-d2e7c2da6879">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>PurchaseOrderID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="529236ff-df0e-4a10-a32e-6bd9cef606c6">
+          <AttributeID>Revision Number</AttributeID>
+          <Name>Revision Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b8011e1c-7e71-4daf-832f-d1904229f2f3">
+          <AttributeID>Status</AttributeID>
+          <Name>Status</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bff89e6b-d03d-4ed5-8476-4a8fb17abb90">
+          <AttributeID>Vendor ID</AttributeID>
+          <Name>Vendor ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0183d776-b055-4958-95e6-41a04f370e94">
+          <AttributeID>Order Date</AttributeID>
+          <Name>Order Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8d80268e-4823-4ccc-96f3-3fc171ceef9e">
+          <AttributeID>Ship Date</AttributeID>
+          <Name>Ship Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7b64ab1a-2909-49a9-9f21-ad317a05882a">
+          <AttributeID>Sub Total</AttributeID>
+          <Name>Sub Total</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e17591af-13fd-4fe2-9209-e3b04da632d1">
+          <AttributeID>Total Due</AttributeID>
+          <Name>Total Due</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ea858651-408e-4a7a-9970-a5321aaafb22">
+          <AttributeID>Modified Date</AttributeID>
+          <Name>Modified Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="78db5f42-bc3a-441a-9184-68da5abfacdd">
+          <AttributeID>Average Lead Time</AttributeID>
+          <Name>Average Lead Time</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e22d228d-755c-4e33-b781-12175f02c1a9">
+          <AttributeID>Standard Price</AttributeID>
+          <Name>Standard Price</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="618de869-2c19-47e7-a7b4-9aee57ce0a73">
+          <AttributeID>On Order Qty</AttributeID>
+          <Name>On Order Qty</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="72f0eb26-fda1-4679-98f3-5a0cfd26ae70">
+          <AttributeID>Vendor Name</AttributeID>
+          <Name>Vendor Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3734de19-1877-41eb-bb85-c811145554a1">
+          <AttributeID>Credit Rating</AttributeID>
+          <Name>Credit Rating</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4814aec5-1fd5-475a-867e-d489b7240c92">
+          <AttributeID>Prefered Vendor Status</AttributeID>
+          <Name>Prefered Vendor Status</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="47a4fd9d-6d73-4243-9a68-fc536de5bb3e">
+          <AttributeID>Active Flag</AttributeID>
+          <Name>Active Flag</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="79f5b92c-022a-480a-b12a-0ab671d2eed3">
+      <ID>Revision Number</ID>
+      <Name>Revision Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09ed423b-4a10-4846-808f-cefdfb44a789">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="00142741-7faf-48a2-ab9a-e2668649be22">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>RevisionNumber</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="79036145-9528-464d-bf99-47207231d876">
+      <ID>Status</ID>
+      <Name>Status</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="85912de5-10a7-49b4-b41d-4ec1678d4661">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="97305484-5bb3-4306-b17c-ce347bb15c17">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>Status</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a97bbb1f-051a-4243-9fbe-043f9f9b4e1a">
+      <ID>Vendor ID</ID>
+      <Name>Vendor ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b0ede64d-24db-466b-9095-c12a93c28da8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5180b991-ca6d-4f61-b385-96621f0c952b">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>VendorID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8b7494c0-933e-4061-bc47-3946a86fe0ad">
+      <ID>Order Date</ID>
+      <Name>Order Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="26ff8ce1-fdf2-4aeb-bf19-38581625bddf">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="809aedc0-6cfc-49c8-8647-d0fbf744ac9d">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>OrderDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="20258676-ecd5-458e-9b2e-2d617208a937">
+      <ID>Ship Date</ID>
+      <Name>Ship Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fc789802-6d19-4d3a-b131-b2bbec466a3b">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b45be3a4-92e6-465b-87ab-42c03616badb">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>ShipDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ab30dae0-ec01-4603-ab82-9ff2f777fd79">
+      <ID>Sub Total</ID>
+      <Name>Sub Total</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fbb13ea6-8e68-46a2-ae6b-774df93175fc">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4618a681-f371-45e4-b04c-89876a52cbca">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>SubTotal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a01e1203-3097-4e09-bc60-1dbcb7370997">
+      <ID>Total Due</ID>
+      <Name>Total Due</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6665e324-b0e6-4222-892d-98ed7a1cc9d0">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bc53172e-3a30-4188-968e-e150ea1ca499">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>TotalDue</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="43988721-0a4c-4e11-a724-e9724b8dc009">
+      <ID>Modified Date</ID>
+      <Name>Modified Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="12407e7a-a57a-41a6-b168-ae4ff023308c">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="da2f2a34-7cf5-4bb9-803b-a518fccf6b61">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>ModifiedDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="46ea0c8f-44b4-421d-bbf6-b7f32643d3ee">
+      <ID>Average Lead Time</ID>
+      <Name>Average Lead Time</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="54ff3537-d36a-4750-98ce-05d40e3173f2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e9ab1a75-4835-4e93-8943-824f01d4b55a">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>AverageLeadTime</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="56b426ef-ef0b-4c6b-8f41-c219da01e407">
+      <ID>Standard Price</ID>
+      <Name>Standard Price</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c754c915-1cf9-4eae-b5e4-a64b09b8bec2">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e76cc690-122b-4c83-9eaa-f2de1cf84373">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>StandardPrice</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9bd1c06f-6e4a-492f-8a68-38f6edd01654">
+      <ID>On Order Qty</ID>
+      <Name>On Order Qty</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bdc3a825-27a2-4ecd-9ae2-8aa21fd1d3d5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c86252c7-14f5-48f0-9c71-31c295c27a9f">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>OnOrderQty</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bcebc5fd-8d45-4270-8d16-1d94062aa87a">
+      <ID>Vendor Name</ID>
+      <Name>Vendor Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b59bba9a-b212-4546-9916-14ccad3e02bf">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0e1b0ad5-31d3-4d66-b483-a2e5d70d91b5">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>VendorName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="85d81589-4397-43aa-930a-6442fcf561c2">
+      <ID>Credit Rating</ID>
+      <Name>Credit Rating</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="728beedd-3c50-4804-8931-e72c93f228ea">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4688a0bb-e18e-4f64-bbce-b976f4653bb6">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>CreditRating</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7773c114-d92b-41d7-86d0-261f4fea15ed">
+      <ID>Prefered Vendor Status</ID>
+      <Name>Prefered Vendor Status</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a8a40480-69d6-4adb-8b0c-ddb7b085e2d4">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="451267a8-2098-4365-a47d-7c75e5424ac4">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>PreferedVendorStatus</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dbc57f8b-6e39-48e1-8d23-302e837868db">
+      <ID>Active Flag</ID>
+      <Name>Active Flag</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dd6066db-d17e-472f-97bc-284803e465fe">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f5bf4ce7-9e3d-41d4-819f-36198f907930">
+            <TableID>Purchase_Dim_PurchaseOrderHeader</TableID>
+            <ColumnID>ActiveFlag</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

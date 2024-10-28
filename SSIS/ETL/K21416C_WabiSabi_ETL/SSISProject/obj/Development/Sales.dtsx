@@ -1,0 +1,1809 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/25/2023 9:13:23 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="THU-THAO"
+  DTS:CreatorName="THU-THAO\PC"
+  DTS:DTSID="{D90C412F-9563-4A90-B8F1-68853D1183DD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Sales"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{222EA664-AFDD-482F-80F1-5705C6E4804F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{6C5EA3F8-CFB6-4F78-9E72-985C6FC35D6D}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\UEL\HK5\Data warehouse and intergration\Data for Project\SalesOrderHeader.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{50FA3976-9A92-4625-834B-9E11DDEAF95B}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\UEL\HK5\Data warehouse and intergration\Data for Project\SalesOrderHeader.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{9A3FD3DB-514F-42BE-BC0B-5BAE1C03FD89}"
+      DTS:ObjectName="Excel Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\UEL\HK5\Data warehouse and intergration\Data for Project\SalesOrderHeader.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{6739C0C1-253D-43ED-8400-3B534E7380AD}"
+      DTS:ObjectName="Excel Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\UEL\HK5\Data warehouse and intergration\Data for Project\SalesOrderDetail.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[THU-THAO\THTHAO.Project.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B0DB78BF-F184-4DB1-A5BA-60455FA4ACE8}"
+      DTS:ObjectName="THU-THAO\THTHAO.Project.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=THU-THAO\THTHAO;Initial Catalog=Project;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Sales-{B0DB78BF-F184-4DB1-A5BA-60455FA4ACE8}THU-THAO\THTHAO.Project.sa;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{544F0AE5-430B-4888-B760-4706FFE12868}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="maxModifiedDate">
+      <DTS:VariableValue
+        DTS:DataType="7">11/25/2023 10:44:25 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sales Order Detail"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{EC4EB273-39D6-4689-828A-81046F9B860F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sales Order Detail">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sales Order Detail\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{24CC4939-FB41-42FE-AB9B-06B82EB9AAD0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sales Order Detail\Data Flow Task\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">SalesOrderDetail</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 3]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 3]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesOrderID]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderID]"
+                          name="SalesOrderID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderDetailID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesOrderDetailID]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderDetailID]"
+                          name="SalesOrderDetailID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderQty]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderQty]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderQty]"
+                          name="OrderQty"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ProductID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProductID]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ProductID]"
+                          name="ProductID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SpecialOfferID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SpecialOfferID]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SpecialOfferID]"
+                          name="SpecialOfferID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[UnitPrice]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[UnitPrice]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[UnitPrice]"
+                          name="UnitPrice"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[UnitPriceDiscount]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[UnitPriceDiscount]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[UnitPriceDiscount]"
+                          name="UnitPriceDiscount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[LineTotal]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[LineTotal]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[LineTotal]"
+                          name="LineTotal"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[rowguid]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[rowguid]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[rowguid]"
+                          name="rowguid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ModifiedDate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ModifiedDate]"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ModifiedDate]"
+                          name="ModifiedDate"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesOrderID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesOrderDetailID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesOrderDetailID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[CarrierTrackingNumber]"
+                          dataType="wstr"
+                          length="255"
+                          name="CarrierTrackingNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderQty]"
+                          dataType="wstr"
+                          length="255"
+                          name="OrderQty" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProductID]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SpecialOfferID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SpecialOfferID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[UnitPrice]"
+                          dataType="wstr"
+                          length="255"
+                          name="UnitPrice" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[UnitPriceDiscount]"
+                          dataType="wstr"
+                          length="255"
+                          name="UnitPriceDiscount" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[LineTotal]"
+                          dataType="wstr"
+                          length="255"
+                          name="LineTotal" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[rowguid]"
+                          dataType="wstr"
+                          length="255"
+                          name="rowguid" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ModifiedDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="ModifiedDate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesOrderID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesOrderID]"
+                          name="SalesOrderID" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesOrderDetailID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesOrderDetailID]"
+                          name="SalesOrderDetailID" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OrderQty]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OrderQty]"
+                          name="OrderQty" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ProductID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ProductID]"
+                          name="ProductID" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SpecialOfferID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SpecialOfferID]"
+                          name="SpecialOfferID" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[UnitPrice]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[UnitPrice]"
+                          name="UnitPrice" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[UnitPriceDiscount]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[UnitPriceDiscount]"
+                          name="UnitPriceDiscount" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[LineTotal]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[LineTotal]"
+                          name="LineTotal" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[rowguid]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[rowguid]"
+                          name="rowguid" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ModifiedDate]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ModifiedDate]"
+                          name="ModifiedDate" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Sales].[Fact_SalesOrderDetail]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[THU-THAO\THTHAO.Project.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[THU-THAO\THTHAO.Project.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesOrderID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SalesOrderID"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderID]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesOrderDetailID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SalesOrderDetailID"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderDetailID]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderQty]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="OrderQty"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderQty]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ProductID"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ProductID]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpecialOfferID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SpecialOfferID"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialOfferID]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SpecialOfferID]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="UnitPrice"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[UnitPrice]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPriceDiscount]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="UnitPriceDiscount"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[UnitPriceDiscount]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LineTotal]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="LineTotal"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[LineTotal]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rowguid]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="rowguid"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[rowguid]" />
+                        <inputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ModifiedDate"
+                          externalMetadataColumnId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ModifiedDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesOrderDetailID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
+                          dataType="wstr"
+                          length="255"
+                          name="OrderQty" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialOfferID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SpecialOfferID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                          dataType="wstr"
+                          length="255"
+                          name="UnitPrice" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
+                          dataType="wstr"
+                          length="255"
+                          name="UnitPriceDiscount" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                          dataType="wstr"
+                          length="255"
+                          name="LineTotal" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                          dataType="wstr"
+                          length="255"
+                          name="rowguid" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="ModifiedDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sales Order Detail\Data Flow Task.Paths[Excel Source Output]"
+                  endId="Package\Sales Order Detail\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Excel Source Output"
+                  startId="Package\Sales Order Detail\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sales Order Detail\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{92C83065-4E31-4BFC-BB78-FE36CA3879A6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B0DB78BF-F184-4DB1-A5BA-60455FA4ACE8}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [Sales].[Fact_SalesOrderDetail]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sales Order Detail.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{C785E0FE-7C2C-4C50-9249-B56167F6C8B8}"
+          DTS:From="Package\Sales Order Detail\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sales Order Detail\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sales Order Header"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{216B3473-70B9-4EF8-BA95-C303AA783C95}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sales Order Header">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sales Order Header\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{63C72BBA-B95B-43B9-8B5B-1A71EE378DC5}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sales Order Header\Data Flow Task\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">Sheet1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sales Order Header\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesOrderID]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderID]"
+                          name="SalesOrderID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[RevisionNumber]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[RevisionNumber]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[RevisionNumber]"
+                          name="RevisionNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderDate]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]"
+                          name="OrderDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[DueDate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[DueDate]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[DueDate]"
+                          name="DueDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ShipDate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ShipDate]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ShipDate]"
+                          name="ShipDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                          name="Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OnlineOrderFlag]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[OnlineOrderFlag]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OnlineOrderFlag]"
+                          name="OnlineOrderFlag"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderNumber]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesOrderNumber]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderNumber]"
+                          name="SalesOrderNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[CustomerID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[CustomerID]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[CustomerID]"
+                          name="CustomerID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesPersonID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesPersonID]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesPersonID]"
+                          name="SalesPersonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ShipMethodID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ShipMethodID]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ShipMethodID]"
+                          name="ShipMethodID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SubTotal]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SubTotal]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SubTotal]"
+                          name="SubTotal"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[TaxAmt]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[TaxAmt]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[TaxAmt]"
+                          name="TaxAmt"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Freight]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Freight]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Freight]"
+                          name="Freight"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[TotalDue]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[TotalDue]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[TotalDue]"
+                          name="TotalDue"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Comment]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Comment]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Comment]"
+                          name="Comment"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[rowguid]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[rowguid]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[rowguid]"
+                          name="rowguid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ModifiedDate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ModifiedDate]"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ModifiedDate]"
+                          name="ModifiedDate"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesOrderID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[RevisionNumber]"
+                          dataType="wstr"
+                          length="255"
+                          name="RevisionNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="OrderDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[DueDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="DueDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ShipDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="ShipDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                          dataType="wstr"
+                          length="255"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[OnlineOrderFlag]"
+                          dataType="wstr"
+                          length="255"
+                          name="OnlineOrderFlag" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesOrderNumber]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesOrderNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[PurchaseOrderNumber]"
+                          dataType="wstr"
+                          length="255"
+                          name="PurchaseOrderNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[AccountNumber]"
+                          dataType="wstr"
+                          length="255"
+                          name="AccountNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[CustomerID]"
+                          dataType="wstr"
+                          length="255"
+                          name="CustomerID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SalesPersonID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[TerritoryID]"
+                          dataType="wstr"
+                          length="255"
+                          name="TerritoryID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[BillToAddressID]"
+                          dataType="wstr"
+                          length="255"
+                          name="BillToAddressID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ShipToAddressID]"
+                          dataType="wstr"
+                          length="255"
+                          name="ShipToAddressID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ShipMethodID]"
+                          dataType="wstr"
+                          length="255"
+                          name="ShipMethodID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[CreditCardID]"
+                          dataType="wstr"
+                          length="255"
+                          name="CreditCardID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[CreditCardApprovalCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="CreditCardApprovalCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[CurrencyRateID]"
+                          dataType="wstr"
+                          length="255"
+                          name="CurrencyRateID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[SubTotal]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubTotal" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[TaxAmt]"
+                          dataType="wstr"
+                          length="255"
+                          name="TaxAmt" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Freight]"
+                          dataType="wstr"
+                          length="255"
+                          name="Freight" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[TotalDue]"
+                          dataType="wstr"
+                          length="255"
+                          name="TotalDue" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Comment]"
+                          dataType="wstr"
+                          length="255"
+                          name="Comment" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[rowguid]"
+                          dataType="wstr"
+                          length="255"
+                          name="rowguid" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[ModifiedDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="ModifiedDate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesOrderID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesOrderID]"
+                          name="SalesOrderID" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[RevisionNumber]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[RevisionNumber]"
+                          name="RevisionNumber" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OrderDate]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OrderDate]"
+                          name="OrderDate" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[DueDate]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[DueDate]"
+                          name="DueDate" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ShipDate]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ShipDate]"
+                          name="ShipDate" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OnlineOrderFlag]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OnlineOrderFlag]"
+                          name="OnlineOrderFlag" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesOrderNumber]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesOrderNumber]"
+                          name="SalesOrderNumber" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[CustomerID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[CustomerID]"
+                          name="CustomerID" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesPersonID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SalesPersonID]"
+                          name="SalesPersonID" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ShipMethodID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ShipMethodID]"
+                          name="ShipMethodID" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SubTotal]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[SubTotal]"
+                          name="SubTotal" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[TaxAmt]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[TaxAmt]"
+                          name="TaxAmt" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Freight]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Freight]"
+                          name="Freight" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[TotalDue]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[TotalDue]"
+                          name="TotalDue" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Comment]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Comment]"
+                          name="Comment" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[rowguid]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[rowguid]"
+                          name="rowguid" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ModifiedDate]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ModifiedDate]"
+                          name="ModifiedDate" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Sales].[Dim_SalesOrderHeader]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[THU-THAO\THTHAO.Project.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[THU-THAO\THTHAO.Project.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesOrderID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SalesOrderID"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderID]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RevisionNumber]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="RevisionNumber"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RevisionNumber]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[RevisionNumber]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderDate]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="OrderDate"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DueDate]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="DueDate"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DueDate]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[DueDate]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShipDate]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ShipDate"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipDate]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ShipDate]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Status]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OnlineOrderFlag]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="OnlineOrderFlag"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OnlineOrderFlag]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OnlineOrderFlag]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesOrderNumber]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SalesOrderNumber"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderNumber]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesOrderNumber]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CustomerID"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[CustomerID]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesPersonID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SalesPersonID"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPersonID]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SalesPersonID]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShipMethodID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ShipMethodID"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipMethodID]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ShipMethodID]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SubTotal]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SubTotal"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubTotal]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[SubTotal]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TaxAmt]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="TaxAmt"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmt]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[TaxAmt]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Freight]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Freight"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Freight]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Freight]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TotalDue]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="TotalDue"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalDue]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[TotalDue]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Comment]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Comment"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Comment]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rowguid]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="rowguid"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[rowguid]" />
+                        <inputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ModifiedDate"
+                          externalMetadataColumnId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Date]"
+                          lineageId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[ModifiedDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RevisionNumber]"
+                          dataType="wstr"
+                          length="255"
+                          name="RevisionNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="OrderDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DueDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="DueDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="ShipDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          dataType="wstr"
+                          length="255"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OnlineOrderFlag]"
+                          dataType="wstr"
+                          length="255"
+                          name="OnlineOrderFlag" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderNumber]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesOrderNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                          dataType="wstr"
+                          length="255"
+                          name="CustomerID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPersonID]"
+                          dataType="wstr"
+                          length="255"
+                          name="SalesPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipMethodID]"
+                          dataType="wstr"
+                          length="255"
+                          name="ShipMethodID" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubTotal]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubTotal" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmt]"
+                          dataType="wstr"
+                          length="255"
+                          name="TaxAmt" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Freight]"
+                          dataType="wstr"
+                          length="255"
+                          name="Freight" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalDue]"
+                          dataType="wstr"
+                          length="255"
+                          name="TotalDue" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                          dataType="wstr"
+                          length="255"
+                          name="Comment" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                          dataType="wstr"
+                          length="255"
+                          name="rowguid" />
+                        <externalMetadataColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Date]"
+                          dataType="dbTimeStamp"
+                          name="ETL_Date" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sales Order Header\Data Flow Task.Paths[Excel Source Output]"
+                  endId="Package\Sales Order Header\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Excel Source Output"
+                  startId="Package\Sales Order Header\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sales Order Header\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E95F53D3-A149-4D28-BF4B-8FFE9A3C6959}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B0DB78BF-F184-4DB1-A5BA-60455FA4ACE8}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [Sales].[Dim_SalesOrderHeader]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sales Order Header.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D8A22760-DF0B-42C3-96CD-379391C2A4BB}"
+          DTS:From="Package\Sales Order Header\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sales Order Header\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Sales Order Detail\Data Flow Task"
+          TopLeft="73.2083246627202,79.5499973616004" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Sales Order Detail\Execute SQL Task"
+          TopLeft="46.7499913759531,11.9499985703826" />
+        <EdgeLayout
+          Id="Package\Sales Order Detail.PrecedenceConstraints[Constraint]"
+          TopLeft="128.749991375953,54.6166652370492">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.4583332867671,24.9333321245512"
+              Start="0,0"
+              End="20.4583332867671,17.4333321245512">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.46666606227561" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.46666606227561"
+                    Point2="0,12.4666660622756"
+                    Point3="4,12.4666660622756" />
+                  <mssgle:LineSegment
+                    End="16.4583332867671,12.4666660622756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.4583332867671,12.4666660622756"
+                    Point2="20.4583332867671,12.4666660622756"
+                    Point3="20.4583332867671,16.4666660622756" />
+                  <mssgle:LineSegment
+                    End="20.4583332867671,17.4333321245512" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="252,176.666666666667"
+          Size="252,219.333333333334"
+          Id="Package\Sales Order Detail"
+          TopLeft="514.999992325902,66.8999996978045" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Sales Order Header\Data Flow Task"
+          TopLeft="86.166662680606,85.0666646210353" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Sales Order Header\Execute SQL Task"
+          TopLeft="81.1666627551121,15.5166658646862" />
+        <EdgeLayout
+          Id="Package\Sales Order Header.PrecedenceConstraints[Constraint]"
+          TopLeft="162.666662717859,58.1833325313528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.8833320896825"
+              Start="0,0"
+              End="0,19.3833320896825">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3833320896825" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="282.666666666667,202"
+          Size="282.666666666667,244.666666666667"
+          Id="Package\Sales Order Header"
+          TopLeft="181.249997299165,36.3999993491172" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sales Order Detail\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Sales Order Detail\Data Flow Task\OLE DB Destination"
+          TopLeft="409,193" />
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Sales Order Detail\Data Flow Task\Excel Source"
+          TopLeft="388,59" />
+        <EdgeLayout
+          Id="Package\Sales Order Detail\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="457.666666666667,101.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.3333333333333,91.3333333333333"
+              Start="0,0"
+              End="37.3333333333333,83.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.6666666666667"
+                    Point2="0,45.6666666666667"
+                    Point3="4,45.6666666666667" />
+                  <mssgle:LineSegment
+                    End="33.3333333333333,45.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.3333333333333,45.6666666666667"
+                    Point2="37.3333333333333,45.6666666666667"
+                    Point3="37.3333333333333,49.6666666666667" />
+                  <mssgle:LineSegment
+                    End="37.3333333333333,83.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sales Order Detail\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sales Order Detail\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sales Order Header\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Sales Order Header\Data Flow Task\Excel Source"
+          TopLeft="506,60" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Sales Order Header\Data Flow Task\OLE DB Destination"
+          TopLeft="510,150" />
+        <EdgeLayout
+          Id="Package\Sales Order Header\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="575.666666666667,102.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.3333333333334,47.3333333333333"
+              Start="0,0"
+              End="20.3333333333334,39.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.6666666666667"
+                    Point2="0,23.6666666666667"
+                    Point3="4,23.6666666666667" />
+                  <mssgle:LineSegment
+                    End="16.3333333333334,23.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.3333333333334,23.6666666666667"
+                    Point2="20.3333333333334,23.6666666666667"
+                    Point3="20.3333333333334,27.6666666666667" />
+                  <mssgle:LineSegment
+                    End="20.3333333333334,39.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sales Order Header\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sales Order Header\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

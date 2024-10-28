@@ -1,0 +1,122 @@
+-- Counting total vendors with specific criteria
+WITH MEMBER [Measures].[Total Vendors] AS
+DISTINCTCOUNT ([Dim Purchase Order Header].[Vendor Name].children)
+SELECT 
+    [Measures].[Total Vendors] ON COLUMNS
+FROM [Purchasing].[Dim Purchase Order Header].[Vendor Name].children ON ROWS
+WHERE 
+    ([Dim Purchase Order Header].[Credit Rating].[1]
+	,[Dim Purchase Order Header].[Credit Rating].[2]}
+	, [Dim Purchase Order Header].[Active Flag].&[TRUE])
+
+-- Retrieving top vendors by rejection rate
+WITH SET HIGHESTVENDOR
+AS TOPCOUNT ([Dim Purchase Order Header].[Vendor Name].children, 10,
+[Measures].[RejectionRate])
+SELECT nonempty(HIGHESTVENDOR) ON ROWS,
+nonempty([Measures].[RejectionRate]) ON COLUMNS
+FROM [Purchasing]
+
+-- Analyzing stocked rate by year and credit rating
+SELECT 
+  NONEMPTY([Dim Date 1].[Year].Children) on columns,
+  NONEMPTY([Dim Purchase Order Header].[Credit Rating].Children) ON rows
+FROM [Purchasing]
+where [Measures].[StockedRate]
+
+-- Analyzing rejection rates by year and credit rating
+SELECT 
+  NONEMPTY([Dim Date 1].[Year].Children) on columns,
+  NONEMPTY([Dim Purchase Order Header].[Credit Rating].Children) ON rows
+FROM [Purchasing]
+where [Measures].[RejectionRate]
+
+-- Analyzing line total by year and product category
+SELECT 
+  NONEMPTY([Dim Date 1].[Year].Children) on COLUMNS,
+  NONEMPTY([Dim Product 1].[Product Category Name].Children) ON ROWS
+FROM [Purchasing]
+where [Measures].[Line Total]
+
+-- Analyzing line total by quarter and product category
+SELECT 
+  NONEMPTY([Dim Date 1].[Quarter].Children) ON ROWS,
+  NONEMPTY([Dim Product 1].[Product Category Name].Children) ON COLUMNS
+FROM [Purchasing]
+WHERE [Measures].[Line Total]
+
+-- Analyzing line total by ordered months and product category
+WITH 
+  SET [OrderedMonths] AS
+    ORDER(
+      NONEMPTY([Dim Date 1].[Month].Children), 
+      Val([Dim Date 1].[Month].CurrentMember.Name)
+    )
+    
+SELECT 
+  [OrderedMonths] ON ROWS,
+  NonEmpty([Dim Product 1].[Product Category Name].Children) ON COLUMNS
+FROM [Purchasing]
+WHERE [Measures].[Line Total]
+
+-- Analyzing quarterly product category line total for each year
+SELECT {[Dim Date 1].[Hierarchy].[Year].&[2011].&[1]:[Dim Date 1].[Hierarchy].[Year].&[2011].&[4],
+[Dim Date 1].[Hierarchy].[Year].&[2012].&[1]:[Dim Date 1].[Hierarchy].[Year].&[2012].&[4],
+[Dim Date 1].[Hierarchy].[Year].&[2013].&[1]:[Dim Date 1].[Hierarchy].[Year].&[2013].&[4],
+[Dim Date 1].[Hierarchy].[Year].&[2014].&[1]:[Dim Date 1].[Hierarchy].[Year].&[2014].&[4]} on ROWS,
+[Dim Product 1].[Product Category Name].Children on COLUMNS
+FROM [Purchasing]
+WHERE [Measures].[Line Total]
+	
+-- Analyzing top 6 reasons with the highest differences in lead time due to scrap
+WITH SET ScrapDiffTime
+AS TOPCOUNT ([Dim Work Order].[Scrap Reason Name].children,
+6,
+[Measures].[Different Lead Time])
+SELECT 
+  NONEMPTY([Measures].[Different Lead Time]) ON COLUMNS,
+  NONEMPTY(ScrapDiffTime) ON ROWS
+FROM [Production]
+
+-- Analyzing actual cost by product category and year
+SELECT 
+  NONEMPTY([Dim Product].[Product Category Name].Children) ON COLUMNS,
+  NONEMPTY([Dim Date].[Year].Children) ON ROWS
+FROM [Production]
+WHERE [Measures].[Actual Cost]
+
+-- Analyzing actual cost by product category and quarter
+SELECT 
+  NONEMPTY([Dim Product].[Product Category Name].Children) ON COLUMNS,
+  NONEMPTY([Dim Date].[Quarter].Children) ON ROWS
+FROM [Production]
+WHERE [Measures].[Actual Cost]
+
+-- -- Analyzing actual cost by product category and months
+WITH 
+  SET [OrderedMonths] AS
+    ORDER(
+      NONEMPTY([Dim Date].[Month].Children), 
+      Val([Dim Date].[Month].CurrentMember.Name)
+    )
+
+SELECT 
+  NONEMPTY([Dim Product].[Product Category Name].Children) ON COLUMNS,
+  NONEMPTY([OrderedMonths]) ON ROWS
+FROM [Production]
+WHERE [Measures].[Actual Cost]
+
+--  Analyzing actual cost by product category and week day name
+SELECT 
+  NONEMPTY([Dim Product].[Product Category Name].Children) ON COLUMNS,
+  NONEMPTY([Dim Date].[Week Day Name].Children) ON ROWS
+FROM [Production]
+WHERE [Measures].[Actual Cost]
+
+-- Analyzing Top Products by Redundant Cost Rate
+WITH SET Top5ProductHighRedundateCostRate as
+topcount([Dim Product].[Name].Children, 10, [Measures].[RedundantCostRate])
+
+SELECT Top5ProductHighRedundateCostRate ON ROWS,
+		[Measures].[RedundantCostRate] ON COLUMNS
+		FROM [Production]

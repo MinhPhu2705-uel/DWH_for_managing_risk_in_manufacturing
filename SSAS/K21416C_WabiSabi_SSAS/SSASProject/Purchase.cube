@@ -1,0 +1,234 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="677b07c0-3ed7-4d2d-8b91-4a2e09f3757f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Purchase</ID>
+  <Name>Purchase</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="b4c2da87-7973-42e5-bb64-5806fc2748f7">
+      <ID>Dim Purchase Order Header</ID>
+      <Name>Dim Purchase Order Header</Name>
+      <DimensionID>Dim Purchase Order Header</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f95dd772-6975-4ac4-a5b6-eab8d4c8069a">
+          <AttributeID>Purchase Order ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ab987b00-cabf-4a61-aded-fa794623433a">
+          <AttributeID>Ship Method ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="42590f3b-5a83-40e2-a265-e6d94f7d94d2">
+          <AttributeID>Business Entity ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="80e0adb5-0e80-4540-9e54-385b8410bf5f">
+      <ID>Fact Purchase Order Detail</ID>
+      <Name>Fact Purchase Order Detail</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="1981e82f-e63c-42e0-a7df-634dab43c866">
+          <ID>Order Qty</ID>
+          <Name>Order Qty</Name>
+          <Source dwd:design-time-name="d570f04d-6a7f-45a2-9bb1-6908076ad80d">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bbdf485e-8007-410a-b85d-b827cb3c29d1">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>OrderQty</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="68de6c4b-75dd-4f7b-993a-483c22834a34">
+          <ID>Unit Price</ID>
+          <Name>Unit Price</Name>
+          <Source dwd:design-time-name="fb9ad84b-4bae-4e42-b00c-e174da626146">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bcd0ecf4-72c4-4768-a53a-14e1b7be1c4a">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>UnitPrice</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ebc48c24-190d-4fd1-8b36-c0fbcec1e6a7">
+          <ID>Line Total</ID>
+          <Name>Line Total</Name>
+          <Source dwd:design-time-name="958cb479-c5d3-4645-b541-422585e28411">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8da0639d-81ba-4d93-b969-6c84d8037d02">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>LineTotal</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="15eaffc6-5297-42cc-8318-5ce89a807021">
+          <ID>Received Qty</ID>
+          <Name>Received Qty</Name>
+          <Source dwd:design-time-name="0c3fa88f-0eb7-4d67-bc5d-2aa0fa27d5b3">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5df4726c-bf23-4618-8c5e-472c4ffcab1e">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>ReceivedQty</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f7dd7f86-381c-4de2-8450-808a90d78a22">
+          <ID>Rejected Qty</ID>
+          <Name>Rejected Qty</Name>
+          <Source dwd:design-time-name="ca008904-76ad-4f4e-80ad-87360a1900a2">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="22938925-8149-4d31-9545-31689b245519">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>RejectedQty</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="e26d16b0-7da4-4f43-8024-a39ca964b987">
+          <ID>Stocked Qty</ID>
+          <Name>Stocked Qty</Name>
+          <Source dwd:design-time-name="e8bb5d59-63f6-40f7-9fb5-a806e51b2e65">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1cc78f90-0e09-4a56-93e8-aaa3a46d035a">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>StockedQty</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="532fc31c-0b2b-4fa7-a58b-9ecb0588ad00">
+          <ID>Rejection Rate</ID>
+          <Name>Rejection Rate</Name>
+          <Source dwd:design-time-name="98e52e67-06a9-4816-99ed-92c6389d6587">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="32dbd559-276b-4b82-aee6-a06ac131502a">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>RejectionRate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5d34a628-b288-412c-ad02-0396bd06407d">
+          <ID>AVG Lead Time</ID>
+          <Name>AVG Lead Time</Name>
+          <Source dwd:design-time-name="0668280e-bc0f-4cbe-8514-26cb5153e81f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b4756d88-3faf-41c8-b213-539f03fa072c">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>AVGLeadTime</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="04760b01-2aff-406a-90db-f48d20985bfa">
+          <ID>Stocked Rate</ID>
+          <Name>Stocked Rate</Name>
+          <Source dwd:design-time-name="7a19f659-ed7c-4d9c-a30c-0a695c214823">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="29925359-677a-4f22-b9bd-0a4154b98d58">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>StockedRate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="07f2b2e3-54f5-4295-9396-73320ebdb2c1">
+          <ID>No Vendor</ID>
+          <Name>No Vendor</Name>
+          <Source dwd:design-time-name="25004c24-23e2-4fd3-b070-f3171dc7d71c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="add5cb97-fc30-45bb-9bb2-751f9ced2199">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>NoVendor</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4b3a58da-169e-421e-b264-b792c107cacd">
+          <ID>Diff Due Date</ID>
+          <Name>Diff Due Date</Name>
+          <Source dwd:design-time-name="20365464-07a6-4c01-a11d-eb28c9481718">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="67f9c0af-4d16-4c11-87bb-1dcf0d519b9a">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+              <ColumnID>DiffDueDate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a4ca5055-851b-44c7-93a0-17a0d1abd016">
+          <ID>Fact Purchase Order Detail Count</ID>
+          <Name>Fact Purchase Order Detail Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="a251ebe7-ee5e-4bd4-aa5c-2b35f7f01186">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="5ac54032-3d8f-4049-9a89-adf612b189a0">
+              <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="53789c8b-1eb5-443b-9adf-0f2adc724336">
+          <CubeDimensionID>Dim Purchase Order Header</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="f2dac71a-66d5-40f8-9de1-ad5604619675">
+              <AttributeID>Purchase Order ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="93f47d59-137c-4297-99cc-3f3bd7803ccd">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a8996839-27ca-4c38-96d8-60cca9c181f0">
+                    <TableID>Purchase_Fact_PurchaseOrderDetail</TableID>
+                    <ColumnID>PurchaseOrderID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="da9e900a-4622-4790-8889-e4281a9d5e85">
+    <DataSourceViewID>Purchase</DataSourceViewID>
+  </Source>
+</Cube>
